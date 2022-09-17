@@ -11,7 +11,7 @@ import java.util.Iterator;
 
 /**
  * Java 8
- *
+ * @author Danny Macias Vanegas
  */
 public class App 
 {
