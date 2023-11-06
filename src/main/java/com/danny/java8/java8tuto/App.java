@@ -59,7 +59,6 @@ public class App
 		numeros.add("1");
 		numeros.add("2");
 	}
-	//Ordenamiento por selección
 	public static void seleccion(Integer[] data) {
 		for (int i = 0; i < data.length; i++) {
 			for (int j = i; j < data.length; j++) {
@@ -76,18 +75,12 @@ public class App
 	}
 	
 	public void ordenarElementos(){
-		//Ordenar con sorted de menor a mayor o con mayusculas
-		//lista.stream().sorted().forEach(System.out::println);
+
 		lista.stream().sorted((x,y)-> y.compareTo(x)).forEach(System.out::println);
 	}
 	
 	public void transformar(){
-		//Cambia el valor de los datos de la lista al sumar valores o al cambiar a mayuscula
-		//lista.stream().map(String::toUpperCase).forEach(System.out::println);
-		/*for(String x : numeros){
-			int num = Integer.parseInt(x) + 1;
-			System.out.println(num);
-		}*/
+
 		numeros.stream().map(x -> Integer.parseInt(x) + 1).forEach(System.out::println);
 	}
 	
@@ -96,8 +89,84 @@ public class App
 	}
 	
 	public void contar(){
-		//cuanta la cantidad de elementos de una fila
 		long x = lista.stream().count();
 		System.out.println(x);
+	}
+
+
+
+	public String Llenar(int num) {
+
+
+
+		int[][] matriz1 = new int[num][num];
+		int[][] D = new int[num][num];
+
+		String pesos = "";
+		String caminos = "";
+
+		System.out.println("MATRIZ 1");
+
+
+		for (int i = 0; i < matriz1.length; i++) {
+			for (int j = 0; j < matriz1[i].length; j++) {
+				matriz1[i][j] = (int) (Math.random() * 100 + 1);
+
+				if (i == j) {
+
+					matriz1[i][j] = 0;
+
+				}
+
+				System.out.print(matriz1[i][j] + "  ");
+			}
+			System.out.println();
+		}
+
+		D = matriz1;
+
+		for (int i = 0; i < num; i++) {
+			for (int j = 0; j < num; j++) {
+				pesos += D[i][j] + " ";
+
+				System.out.print(D[i][j] + "	");
+
+			}
+			pesos += "\n";
+			System.out.println();
+
+		}
+
+
+		for (int k = 0; k < matriz1.length; k++) {
+			for (int i = 0; i < matriz1.length; i++) {
+				for (int j = 0; j < matriz1.length; j++) {
+
+					if (matriz1[j][k] > (matriz1[i][j]) + (matriz1[k][i])) {
+
+						matriz1[j][k] = (matriz1[i][j]) + (matriz1[k][i]);
+
+					}
+
+				}
+			}
+		}
+
+		for (int i = 0; i < num; i++) {
+			for (int j = 0; j < num; j++) {
+				caminos += matriz1[i][j] + "  ";
+
+				System.out.print(matriz1[i][j] + "	 ");
+
+			}
+			caminos += "\n";
+			System.out.println();
+
+		}
+
+
+		return "\n la matriz generada aleatoriamente de adyacencias es :\n" + pesos
+				+ " La matriz con los caminos minimos del grafo es :\n" + caminos;
+
 	}
 }
