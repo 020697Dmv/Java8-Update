@@ -1,15 +1,18 @@
 package com.danny.java8.java8tuto;
 
-import com.danny.java8.java8tuto.Arreglos;
-import com.danny.java8.java8tuto.Pilas;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.basic.modificadores.Coche;
+import com.danny.java8.colleciones.Arreglos;
+import com.danny.java8.colleciones.EjerciciosStreams;
+import com.danny.java8.colleciones.Pilas;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-import com.danny.java8.java8tuto.EjerciciosStreams;
 
 
 /**
@@ -34,10 +37,10 @@ public class App
 		Arreglos arreglos=new Arreglos();
 		arreglos.mostrarMensaje();
 		
-		EjerciciosStreams ejerciciosStreams = new EjerciciosStreams();
-		ejerciciosStreams.ejerciciosCurso();
-	//	Pilas pilas= new Pilas();
-	//	pilas.mostrarPila();
+	//	EjerciciosStreams ejerciciosStreams = new EjerciciosStreams();
+	//	ejerciciosStreams.ejerciciosCurso();
+		Pilas pilas= new Pilas();
+		pilas.mostrarPila();
 	
 	}
     public static void main( String[] args )
@@ -48,6 +51,8 @@ public class App
     	App app= new App();
     	app.ordenar();
     	app.metodoNoStatico();
+    	Coche coche = new Coche("Toyota", "Corolla", 180);
+        coche.mostrarDetalles();
     }
     
     

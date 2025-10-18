@@ -1,4 +1,4 @@
-package com.danny.java8.java8tuto;
+package com.danny.java8.colleciones;
 
 import java.util.ArrayList;
 import java.util.List;
